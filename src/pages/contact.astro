@@ -1,79 +1,124 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Contact Us | Osanature Tours',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <main class="py-20 lg:py-32 bg-gradient-to-b from-green-50 to-green-100">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-green-800 text-center mb-8">
+          Contact Us
+        </h1>
+        <p class="text-lg text-gray-600 text-center mb-12">
+          Have questions about our tours? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+        </p>
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          class="bg-white rounded-xl shadow-lg p-6 md:p-10 space-y-6"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
+              />
+            </div>
+          </div>
 
-  <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
-  />
+          <div>
+            <label for="tour" class="block text-sm font-medium text-gray-700 mb-1">Interested Tour</label>
+            <select
+              name="tour"
+              id="tour"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
+            >
+              <option value="">Select a tour (optional)</option>
+              <option value="gold-tour">Gold Tour</option>
+              <option value="night-walk">Night Walk</option>
+              <option value="salto-hike">The Salto Hike</option>
+              <option value="sugar-cane">Sugar Cane Tour</option>
+              <option value="rainforest-hike">Rainforest Hike</option>
+              <option value="bird-watching">Bird Watching Tour</option>
+              <option value="corcovado">Corcovado One Day Tour</option>
+              <option value="one-day-rainforest">One Day Rainforest Hike</option>
+            </select>
+          </div>
 
-  <!-- Features2 Widget ************** -->
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              required
+              rows="5"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
+            ></textarea>
+          </div>
 
-  <Features2
-    title="We are here to help!"
-    items={[
-      {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
+          <button
+            type="submit"
+            class="w-full bg-green-800 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors duration-300 font-medium"
+          >
+            Send Message
+          </button>
+        </form>
+
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="bg-white p-4 rounded-full w-16 h-16 mx-auto mb-4 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-green-800" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-green-800 mb-2">Phone</h3>
+            <p class="text-gray-600">+506 8793 3753</p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-white p-4 rounded-full w-16 h-16 mx-auto mb-4 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-green-800" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-green-800 mb-2">Email</h3>
+            <p class="text-gray-600">josecorcovado@gmail.com</p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-white p-4 rounded-full w-16 h-16 mx-auto mb-4 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-green-800" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-green-800 mb-2">Location</h3>
+            <p class="text-gray-600">Dos Brazos, Osa Peninsula<br/>Costa Rica</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </Layout>

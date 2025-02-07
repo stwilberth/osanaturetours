@@ -8,56 +8,96 @@ const tours = [
     duration: "3 hours",
     price: 45,
     description: "Learn about the local communities gold mining history and activities through a locally guided tour. On this tour you will traverse mild terrain and even have a chance to pan for gold.",
-    level: "Mild"
+    level: "Mild",
+    images: [
+      "/src/assets/images/IMG-20250205-WA0003.jpg",
+      "/src/assets/images/IMG-20250205-WA0004.jpg",
+      "/src/assets/images/IMG-20250205-WA0005.jpg"
+    ]
   },
   {
     title: "Night Walk",
     duration: "3 hours",
     price: 45,
     description: "The nocturnal wildlife is waiting for you in the jungle. This night walk will show you the various animals which are usually only active at night.",
-    level: "Moderate"
+    level: "Moderate",
+    images: [
+      "/src/assets/images/IMG-20250205-WA0006.jpg",
+      "/src/assets/images/IMG-20250205-WA0007.jpg",
+      "/src/assets/images/IMG-20250205-WA0008.jpg"
+    ]
   },
   {
     title: "The Salto Hike",
     duration: "3 hours",
     price: 45,
     description: "A relaxing hike to a natural river pool to enjoy the natural flora and fauna along the way.",
-    level: "Mild"
+    level: "Mild",
+    images: [
+      "/src/assets/images/IMG-20250205-WA0009.jpg",
+      "/src/assets/images/IMG-20250205-WA0010.jpg",
+      "/src/assets/images/IMG-20250205-WA0011.jpg"
+    ]
   },
   {
     title: "Sugar Cane Tour",
     duration: "2 hours",
     price: 30,
     description: "Harvest and press sugar cane and experience the delightful taste of freshly pressed sugar cane juice.",
-    level: "Easy"
+    level: "Easy",
+    images: [
+      "/src/assets/images/IMG-20250205-WA0012.jpg",
+      "/src/assets/images/IMG-20250205-WA0013.jpg",
+      "/src/assets/images/IMG-20250205-WA0014.jpg"
+    ]
   },
   {
     title: "Rainforest Hike",
     duration: "4-5 hours",
     price: 55,
     description: "The rainforest calls you to experience a wonderful hike. This is a short hike through the forest to enjoy the environment.",
-    level: "Moderate"
+    level: "Moderate",
+    images: [
+      "/src/assets/images/IMG-20250205-WA0015.jpg",
+      "/src/assets/images/IMG-20250205-WA0016.jpg",
+      "/src/assets/images/IMG-20250205-WA0017.jpg"
+    ]
   },
   {
     title: "Bird Watching Tour",
     duration: "3 hours",
     price: 45,
     description: "Enjoy bird watching in one of the most bio-diverse areas of the world. Here on the Osa Peninsula, you will have the chance to see many species of birds.",
-    level: "Easy"
+    level: "Easy",
+    images: [
+      "/src/assets/images/IMG-20250205-WA0018.jpg",
+      "/src/assets/images/IMG-20250205-WA0019.jpg",
+      "/src/assets/images/IMG-20250205-WA0020.jpg"
+    ]
   },
   {
     title: "Corcovado One Day Tour (El Tigre Sector)",
     duration: "7-8 hours",
     price: "112 (first person), 78 (second person)",
     description: "On this tour you will have the chance to enjoy spectacular views of the Golfo Dulce and trail through the primary forest. El Tigre is the quickest way to visit Corcovado national park. Includes local naturalist guide and park's entrance fees. (Optional Lunch for $8)",
-    level: "High"
+    level: "High",
+    images: [
+      "/src/assets/images/IMG-20250205-WA0021.jpg",
+      "/src/assets/images/IMG-20250205-WA0022.jpg",
+      "/src/assets/images/IMG-20250205-WA0023.jpg"
+    ]
   },
   {
     title: "One Day Rainforest Hike",
     duration: "6-7 hours",
     price: 60,
     description: "A long rainforest hike enjoying the beautiful scenery through the primary forest with river crossings on the return hike.",
-    level: "High"
+    level: "High",
+    images: [
+      "/src/assets/images/IMG-20250205-WA0024.jpg",
+      "/src/assets/images/IMG-20250205-WA0025.jpg",
+      "/src/assets/images/IMG-20250205-WA0026.jpg"
+    ]
   }
 ];
 
@@ -65,13 +105,13 @@ const tours = [
 
 <Layout title="Osanature Tours | Eco Adventures in Osa Peninsula">
   <main class="min-h-screen bg-gradient-to-b from-green-50 to-green-100">
-    <section class="relative h-[80vh] bg-cover bg-center" style="background-image: url('/hero-nature.jpg')">
-      <div class="absolute inset-0 bg-black/40"></div>
+    <section class="relative h-[60vh] bg-cover bg-center" style="background-image: url('/src/assets/images/IMG-20250205-WA0003.jpg')">
+      <div class="absolute inset-0 bg-black/50"></div>
       <div class="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-white">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center">
           OsanatureTours
         </h1>
-        <p class="text-xl md:text-2xl text-center max-w-2xl">
+        <p class="text-lg md:text-xl text-center max-w-2xl">
           Immerse yourself in authentic eco-adventures and natural wonders
         </p>
       </div>
