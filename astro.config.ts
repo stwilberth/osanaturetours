@@ -73,6 +73,13 @@ export default defineConfig({
 
   image: {
     domains: ['cdn.pixabay.com'],
+    service: { 
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        quality: 80,
+        format: 'webp'
+      }
+    }
   },
 
   markdown: {
