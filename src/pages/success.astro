@@ -1,0 +1,14 @@
+--- 
+// filepath: /c:/laragon/www/osanaturetours/src/pages/success.astro
+import Layout from '../layouts/PageLayout.astro';
+const metadata = { title: 'Message Sent | Osanature Tours' };
+---
+<Layout metadata={metadata}>
+  <main class="pt-8 pb-32 bg-gradient-to-b from-green-50 to-green-100 flex items-center justify-center">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold text-green-800 mb-4">Message Sent Successfully</h1>
+      <p class="text-lg text-gray-700 mb-8">Thank you for contacting us, we will get in touch with you soon.</p>
+      <a href="/" class="inline-block bg-green-800 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors">Return to Home</a>
+    </div>
+  </main>
+</Layout>
