@@ -29,6 +29,14 @@ import oneDayHike3 from '../assets/images/IMG-20250205-WA0026.jpg';
 
 const tours = [
   {
+    title: "Bird Watching Tour",
+    duration: "3 hours",
+    price: 45,
+    description: "Enjoy bird watching in one of the most bio-diverse areas of the world. Here on the Osa Peninsula, you will have the chance to see many species of birds.",
+    level: "Easy",
+    images: [birdWatching1, birdWatching2, birdWatching3]
+  },
+  {
     title: "Gold Tour",
     duration: "3 hours",
     price: 45,
@@ -59,14 +67,6 @@ const tours = [
     description: "The rainforest calls you to experience a wonderful hike. This is a short hike through the forest to enjoy the environment.",
     level: "Moderate",
     images: [rainforestHike1, rainforestHike2, rainforestHike3]
-  },
-  {
-    title: "Bird Watching Tour",
-    duration: "3 hours",
-    price: 45,
-    description: "Enjoy bird watching in one of the most bio-diverse areas of the world. Here on the Osa Peninsula, you will have the chance to see many species of birds.",
-    level: "Easy",
-    images: [birdWatching1, birdWatching2, birdWatching3]
   },
   {
     title: "Corcovado One Day Tour",
