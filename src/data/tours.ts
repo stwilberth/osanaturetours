@@ -54,7 +54,7 @@ const tours = [
   },
   {
     title: "Rainforest Hike",
-    duration: "4-5 hours",
+    duration: "4 hours",
     price: 55,
     description: "The rainforest calls you to experience a wonderful hike. This is a short hike through the forest to enjoy the environment.",
     level: "Moderate",
@@ -69,16 +69,18 @@ const tours = [
     images: [birdWatching1, birdWatching2, birdWatching3]
   },
   {
-    title: "Corcovado One Day Tour (El Tigre Sector)",
-    duration: "7-8 hours",
-    price: "112 (first person), 78 (second person)",
-    description: "On this tour you will have the chance to enjoy spectacular views of the Golfo Dulce and trail through the primary forest. El Tigre is the quickest way to visit Corcovado national park. Includes local naturalist guide and park's entrance fees. (Optional Lunch for $8)",
+    title: "Corcovado One Day Tour",
+    subtitle: "El Tigre Sector",
+    duration: "7 hours",
+    price: "112",
+    price_second: "78",
+    description: "Quick access to Corcovado National Park with spectacular views of Golfo Dulce. Includes guided trail through primary forest, naturalist guide and entrance fees. Optional lunch ($8).",
     level: "High",
     images: [corcovado1, corcovado2, corcovado3]
   },
   {
     title: "One Day Rainforest Hike",
-    duration: "6-7 hours",
+    duration: "6 hours",
     price: 60,
     description: "A long rainforest hike enjoying the beautiful scenery through the primary forest with river crossings on the return hike.",
     level: "High",

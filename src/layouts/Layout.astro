@@ -41,44 +41,13 @@ const { language, textDirection } = I18N;
     <SiteVerification />
     <Analytics />
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
     <slot />
-    <ContactButtons />
     <Footer {...footerData} />
     <BasicScripts />
-    
-    <!-- Swiper JS -->
-    <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script is:inline>
-      document.addEventListener('astro:page-load', function() {
-        const swipers = document.querySelectorAll('.tourSwiper');
-        swipers.forEach(element => {
-          new Swiper(element, {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-              delay: 5000,
-              disableOnInteraction: false,
-            },
-          });
-        });
-      });
-    </script>
   </body>
 </html>
