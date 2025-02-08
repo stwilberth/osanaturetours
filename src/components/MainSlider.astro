@@ -1,0 +1,68 @@
+---
+// filepath: /c:/laragon/www/osanaturetours/src/components/MainSlider.astro
+import { Image } from 'astro:assets';
+const { tours } = Astro.props;
+---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<div class="full-slider">
+  <div class="swiper-wrapper">
+    {tours.map(tour => (
+      <div class="swiper-slide relative h-screen">
+        <Image 
+          src={tour.images[0]} 
+          alt={`Slide for ${tour.title}`} 
+          class="w-full h-full object-cover" 
+        />
+        <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30 text-white">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center">{tour.title}</h1>
+          <p class="text-lg md:text-xl max-w-2xl text-center">{tour.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<style>
+  .full-slider {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Prevent horizontal scrollbar */
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<script type="module">
+  new Swiper('.full-slider', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>

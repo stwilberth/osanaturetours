@@ -1,6 +1,10 @@
 ---
 import PageLayout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
+import Swiper, { Navigation, Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import { headerData } from '~/navigation';
 import type { MetaData } from '~/types';
@@ -13,9 +17,6 @@ const { metadata } = Astro.props;
 ---
 
 <PageLayout metadata={metadata}>
-  <Fragment slot="announcement">
-    <slot name="announcement" />
-  </Fragment>
   <Fragment slot="header">
     <slot name="header">
       <Header

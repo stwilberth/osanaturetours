@@ -1,28 +1,19 @@
 ---
+const { title, description, duration, price, images } = Astro.props;
 import { Image } from 'astro:assets';
-const { title, duration, price, description, level, images } = Astro.props;
 ---
 
-<div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-  <div class="swiper tourSwiper">
-    <div class="swiper-wrapper">
-      {images && images.map((image) => (
-        <div class="swiper-slide">
-          <Image 
-            src={image} 
-            alt={`${title} tour image`}
-            width={800}
-            height={600}
-            class="w-full h-64 object-cover"
-          />
-        </div>
-      ))}
-    </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden mb-4 flex">
+  <div class="relative w-1/4">
+    {images && images.length > 0 && (
+      <Image 
+        src={images[0]} 
+        alt={`${title} tour image`}
+        class="w-full h-64 object-cover"
+      />
+    )}
   </div>
-  <div class="p-6">
+  <div class="p-6 w-3/4">
     <h3 class="text-xl font-bold text-green-800 mb-2">{title}</h3>
     <div class="flex items-center gap-4 text-gray-600 mb-4">
       <span class="flex items-center">

@@ -1,0 +1,29 @@
+---
+import TourCard from '~/components/TourCard.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import  tours from '~/data/tours';
+
+const metadata = {
+  title: 'Tours',
+};
+---
+
+<Layout metadata={metadata}>
+  <main class="min-h-screen bg-gradient-to-b from-green-50 to-green-100">
+    <div class="flex justify-center pt-20">
+      <h1 class="text-3xl font-extrabold text-green-900 pt-4">
+        Tours
+      </h1>
+    </div>
+
+    <div class="container">
+      <div class="grid grid-cols-1 gap-8">
+        <section class="py-8 container mx-auto px-4">
+          <div class="grid grid-cols-1 gap-8">
+            {tours.map(tour => <TourCard {...tour} />)}
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</Layout>
