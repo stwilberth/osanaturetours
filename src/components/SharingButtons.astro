@@ -1,13 +1,14 @@
 ---
-// filepath: /c:/laragon/www/osanaturetours/src/components/SharingButtons.astro
+// Astro component script
 const { url } = Astro.props;
 ---
 
 <div class="sharing-buttons flex flex-wrap fixed top-0 left-0 w-full z-50 p-2">
   <!-- Botón principal -->
-  <button id="main-button" class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-3 rounded-full text-white border-green-400 bg-green-800 hover:bg-green-700 hover:border-green-700">
+  <div class="cursor-pointer border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-3 rounded-full text-white border-green-400 bg-green-800 hover:bg-green-700 hover:border-green-700"
+   onclick="document.getElementById('social-buttons').classList.toggle('hidden')">
     Share
-  </button>
+  </div>
    <!-- Botones de redes sociales -->
    <div id="social-buttons" class="hidden">
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-3 rounded-full text-white border-green-600 bg-green-600 hover:bg-green-700 hover:border-green-700" target="_blank" rel="noopener" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fosanaturetours.com%2F" aria-label="Share on Facebook" draggable="false" style="">
@@ -54,10 +55,3 @@ const { url } = Astro.props;
   </a>
    </div>
 </div>
-
-<script>
-  document.getElementById('main-button').addEventListener('click', function () {
-    const buttons = document.getElementById('social-buttons');
-    buttons.classList.toggle('hidden');
-  });
-</script>

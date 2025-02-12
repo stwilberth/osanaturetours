@@ -1,12 +1,10 @@
 ---
 import Layout from '../layouts/PageLayout.astro';
 import MainSlider from '~/components/MainSlider.astro';
-import SharingButtons from '~/components/SharingButtons.astro';
 import tours from '~/data/tours';
 ---
 
 <Layout title="Osanature Tours | Eco Adventures in Osa Peninsula">
-  <SharingButtons />
   <main class="min-h-screen">
     <MainSlider tours={tours} />
     <section class="py-16 container mx-auto px-4">

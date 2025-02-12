@@ -11,7 +11,6 @@ import icon from 'astro-icon';
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
 
-import astrowind from './vendor/integration';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -62,10 +61,6 @@ export default defineConfig({
       JavaScript: true,
       SVG: false,
       Logger: 1,
-    }),
-
-    astrowind({
-      config: './src/config.yaml',
     }),
   ],
 
