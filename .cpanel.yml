@@ -1,3 +1,30 @@
+---
 deployment:
-  task:
-    - bin/rsync -av --exclude='sites/' . /home3/apren173/osanaturetours.com/
+  tasks:
+    - export DEPLOYPATH=/home3/apren173/osanaturetours.com
+
+    # 1. Limpiar caché antes del deploy
+    - run:
+        command: cd $DEPLOYPATH && drush cr
+
+    # 2. Copiar archivos al servidor (sin eliminar configuración existente)
+    - run:
+        command: rsync -avz --exclude='sites/default/files' --exclude='sites/default/settings.php' * $DEPLOYPATH
+
+    # 3. Instalar dependencias con Composer
+    - run:
+        command: |
+          cd $DEPLOYPATH
+          composer install --no-dev --optimize-autoloader
+
+    # 4. Aplicar actualizaciones de la base de datos
+    - run:
+        command: cd $DEPLOYPATH && drush updb -y
+
+    # 5. Ejecutar cualquier actualización de configuración
+    - run:
+        command: cd $DEPLOYPATH && drush cim -y
+
+    # 6. Limpiar caché después del deploy
+    - run:
+        command: cd $DEPLOYPATH && drush cr

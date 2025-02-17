@@ -1,0 +1,42 @@
+# Archivos y carpetas generadas por Composer
+/vendor/
+composer.lock
+
+# Caché y logs de Drupal
+/sites/default/files/css/
+/sites/default/files/js/
+/sites/default/files/php/
+sites/default/files/.htaccess
+sites/default/files/*.log
+sites/default/private/
+/config/sync/
+
+# Configuración de Drupal (no tocar settings.php)
+!sites/default/settings.php
+sites/default/settings.local.php
+sites/default/files/config_*
+
+# Archivos de entorno local
+.env
+.env.local
+.env.*.local
+
+# Archivos y carpetas de cPanel y SSH
+.cpanel/
+.cphost/
+.bash_history
+.bashrc
+.viminfo
+.profile
+
+# Archivos de backups y exportaciones
+backup_*.sql
+*.tar.gz
+*.zip
+*.bak
+*.swp
+.DS_Store
+
+# Archivos de IDEs y editores de código
+.idea/
+.vscode/
