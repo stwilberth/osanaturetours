@@ -3,28 +3,38 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home3/apren173/osanaturetours.com
 
-    # 1. Limpiar caché antes del deploy
+    # 1. Verificar estado antes del deploy
+    - run:
+        command: cd $DEPLOYPATH && drush status
+
+    # 2. Limpiar caché antes del deploy
     - run:
         command: cd $DEPLOYPATH && drush cr
 
-    # 2. Copiar archivos al servidor (sin eliminar configuración existente)
+    # 3. Subir archivos (sin eliminar config existente)
     - run:
-        command: rsync -avz --exclude='sites/default/files' --exclude='sites/default/settings.php' * $DEPLOYPATH
+        command: |
+          rsync -avz --exclude='sites/default/files' --exclude='sites/default/settings.php' * $DEPLOYPATH || \
+          cp -r * $DEPLOYPATH
 
-    # 3. Instalar dependencias con Composer
+    # 4. Instalar dependencias
     - run:
         command: |
           cd $DEPLOYPATH
           composer install --no-dev --optimize-autoloader
 
-    # 4. Aplicar actualizaciones de la base de datos
+    # 5. Aplicar actualizaciones de la base de datos
     - run:
         command: cd $DEPLOYPATH && drush updb -y
 
-    # 5. Ejecutar cualquier actualización de configuración
+    # 6. Sincronizar configuración
     - run:
         command: cd $DEPLOYPATH && drush cim -y
 
-    # 6. Limpiar caché después del deploy
+    # 7. Limpiar caché nuevamente después del deploy
     - run:
         command: cd $DEPLOYPATH && drush cr
+
+    # 8. Verificar si el sitio responde correctamente
+    - run:
+        command: curl -I https://osanaturetours.com || echo "⚠️ Error en la respuesta del sitio"
