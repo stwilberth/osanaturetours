@@ -1,0 +1,3 @@
+deployment:
+  task:
+    - bin/cp -R . /home3/apren173/osanaturetours.com/
